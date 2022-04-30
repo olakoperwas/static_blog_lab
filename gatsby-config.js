@@ -6,7 +6,8 @@ module.exports = {
     siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-react-helmet`, 
+    `gatsby-plugin-sharp`,  
     `gatsby-plugin-image`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -15,8 +16,48 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `pages`,
+        path: `${__dirname}/src/pages`,
+      },
+    },
+      'gatsby-plugin-react-helmet',
+      'gatsby-transformer-remark',
+      {
+        resolve: `gatsby-source-filesystem`,
+        options:{
+        name: `src`,
+        path: `${__dirname}/src`
+        }
+        }, 
+      {
+      resolve: `gatsby-source-filesystem`,
+      options:{
+      name: `pages`,
+      path: `${__dirname}/src/pages`
+      }
+      }, 
+      {
+        resolve: `gatsby-source-filesystem`,
+        options:{
+        name: `images`,
+        path: `${__dirname}/src/images`
+        }
+        }, 
+        {
+          resolve: `gatsby-source-filesystem`,
+          options:{
+          name: `blog-posts`,
+          path: `${__dirname}/src/blog-posts`
+          }
+          }, 
     `gatsby-plugin-sharp`,
+    {
+      resolve: `gatsby-transformer-sharp`,
+      
+      },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
